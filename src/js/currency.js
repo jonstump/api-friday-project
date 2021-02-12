@@ -12,6 +12,11 @@ export default class Currency {
       });
   }
   currencyLookUp(selectedCurrency) {
-    // let lookUp = (selectedCurrency === )
+    if (selectedCurrency != Currency.conversion_rates) {
+      let lookUp = "Currency not available for conversion";
+      return lookUp;
+    }
+    let lookUp = (selectedCurrency === Currency.conversion_rates);
+    return lookUp;
   }
 }
