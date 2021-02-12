@@ -10,19 +10,18 @@ $(document).ready(function() {
     let currency = $('#selectedCurrency').val();
     
     let promise = Currency.currencyConvert();
-    console.log(promise);
 
     promise.then(function(response) {
       const body = JSON.parse(response);
-      const rate = body.conversion_rates[currency]
+      const rate = body.conversion_rates[currency] * amount
+      console.log(rate)
       console.log(amount * body.conversion_rates[currency])
       if (body.result === "error") {
         $('#error').text(`There was an error processing your request: ${body['error-type']}`);
-      // } else if (currency != body.conversion_rates[currency]) {
-      //   $('#conversion').text(`Sorry we can't cover a rate for ${currency}`)
+      } else if (isNaN(rate)) {
+        $('#conversion').text(`Sorry we can't cover a rate for ${currency}`)
       } else {
-        let convertedRate = rate * amount
-        $('#conversion').text(`The current rate for ${currency} is $${convertedRate}`)
+        $('#conversion').text(`The current rate for ${currency} is $${rate}`)
       }
     }, function(error) {
       
