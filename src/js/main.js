@@ -26,14 +26,13 @@ $(document).ready(function() {
       for (let i = 0; i < currencies.length; i++) {
         const rate = body.conversion_rates[currencies[i]] * amount;
         if (body.result === "error") {
-          $('#error').text(`There was an error processing your request: ${body['error-type']}`);
+          $('#error').text(`<li>There was an error processing your request: ${body['error-type']}</li>`);
         } else if (isNaN(rate)) {
-          $('#conversion').append(`Sorry we can't cover a rate for ${currencies[i]}`);
+          $('#conversion').append(`<li>Sorry we can't cover a rate for ${currencies[i]}</li>`);
         } else {
-          $('#conversion').append(`The current rate for ${currencies[i]} is $${rate}`);
-          $('#error').text("");
+          $('#conversion').append(`<li>The current rate for ${currencies[i]} is $${rate}</li>`);
         }
-      } 
+      }
     });
   });
 });
