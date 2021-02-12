@@ -5,15 +5,24 @@ import '../css/styles.css';
 import Currency from "../js/currency.js";
 
 
-async function currencyLookUp(selectedCurrency) {
-  let response = await Currency.currencyConvert();
-  console.log(response);
-  if (selectedCurrency != "GPB") {
-    $('#conversion').text("Currency unavailable for conversion");
-  } $('conversion').text(`The rate for ${selectedCurrency} is ${response.conversion_rates[0]}`);
-}
+// async function currencyLookUp(selectedCurrency) {
+//   const response = function getElements(response) {
+//       if (response && response!="Error") {
+//         console.log(response);
+//         let rates = response.conversion_rates;
+//         return rates;
+//       } else {
+//         $('#error').text('there was an error');
+//       }
+//     }
+//   let userCurrency = selectedCurrency
+//   console.log(response);
+//   if (userCurrency != "GPB") {
+//     $('#conversion').text("Currency unavailable for conversion");
+//   } $('conversion').text(`The rate for ${selectedCurrency} is ${response.conversion_rates[0]}`);
+// }
 
-async function getElements(response) {
+function getElements(response) {
   if (response && response!="Error") {
     console.log(response);
     let rates = response.conversion_rates;
