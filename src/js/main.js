@@ -7,11 +7,11 @@ import Currency from "../js/currency.js";
 
 
 function getElements(response) {
-  if (response) {
+  if (response && response!="Error") {
     console.log(response);
     // $('#currencyConverted').text(`Conversion: ${} `);
   } else {
-    $('#error').text('error message here');
+    $('#error').text('there was an error');
   }
   
 }
