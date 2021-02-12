@@ -5,16 +5,31 @@
 </head>
 <body>
   <div class="container">
-      <label for="selectedCurrency">Enter a Currency:</label>
-      <input type="text" id="dollarAmount" placeholder="$$$">
-      <input type="text" id="currencyOne" placeholder="KPW">
-      <input type="text" id="currencyTwo" placeholder="KPW">
-      <input type="text" id="currencyThree" placeholder="KPW">
-      <input type="text" id="currencyFour" placeholder="KPW">
-      <input type="text" id="currencyFive" placeholder="KPW">
-      <button class="btn btn-info" id="convert">Convert</button>
-    <span id="error"></span>
-    <span id="conversion"></span>
+    <div class="jumbotron">
+      <h1>Currency Convertor</h1>
+      <p>Below will calculate the conversion rates to USD.</p>
+    </div>
+    <div class="row">
+      <div class=" card col-4">
+        <div class="card-title">
+          <h2>Enter Currencies to convert:</h2>
+        </div>
+        <div class="card-body">
+            <input type="text" id="dollarAmount" placeholder="$ Amount">
+            <input type="text" id="currencyOne" placeholder="KPW">
+            <input type="text" id="currencyTwo" placeholder="AUD">
+            <input type="text" id="currencyThree" placeholder="CAD">
+            <input type="text" id="currencyFour" placeholder="HKD">
+            <input type="text" id="currencyFive" placeholder="IDR">
+            <button class="btn btn-primary" id="convert">Convert</button>
+        </div>
+      </div>
+      <div class="card col-md-4">
+        <span id="error"></span>
+        <span id="conversion"></span>
+      </div>
+    </div>
+    
   </div>
 
 </body>
