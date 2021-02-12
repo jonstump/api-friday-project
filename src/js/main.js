@@ -21,16 +21,16 @@ $(document).ready(function() {
 
     promise.then(function(response) {
       const body = JSON.parse(response);
-      let outputArray = [];
+      // let outputArray = [];
       console.log(body);
       for (let i = 0; i < currencies.length; i++) {
         const rate = body.conversion_rates[currencies[i]] * amount;
         if (body.result === "error") {
           $('#error').text(`There was an error processing your request: ${body['error-type']}`);
         } else if (isNaN(rate)) {
-          $('#conversion').text(`Sorry we can't cover a rate for ${currencies[i]}`);
+          $('#conversion').append(`Sorry we can't cover a rate for ${currencies[i]}`);
         } else {
-          $('#conversion').text(`The current rate for ${currencies[i]} is $${rate}`);
+          $('#conversion').append(`The current rate for ${currencies[i]} is $${rate}`);
           $('#error').text("");
         }
       } 
