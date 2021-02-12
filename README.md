@@ -1,14 +1,10 @@
-# {Project Name}
+# Currency Exchange API
 
 ### By Jon Stump
 <img align="center" src="https://avatars2.githubusercontent.com/u/59323850?s=460&u=372c7d529b7379408ae54491ab3449b6e2f4d94d&v=4">
-#### *Co-Created By:*
 
-#### *{Brief Project Description}*
+#### *This project is a currency exchange application*
 <!-- Check list
-- Project Name
-- Author
-- Brief Description
 - Description
 - Specs
 - Link in gh-pages
@@ -19,19 +15,29 @@
 * * *
 
 ## Description  
-{project description}
+Currency Conversion Epicodus Friday Project
 
 * * *
 ## Specs
+Initial Specs:
+| Behavior | Input | Output |
+| ------------- |:-------------:| -----:|
+| something | X | Y |
+| something | X | Y |
+| something | X | Y |
 
 
 * * *
 
 ## Technologies used
-* HTML
-* CSS
-* Git and Github
-* JavaScript
+* Javascript
+* jQuery
+* Bootstrap
+* Git
+* GitHub
+* NPM
+* Jest
+* webpack
 * C8H10N4O2
 
 * * *
@@ -41,75 +47,39 @@
 ### Want to see this webpage now?
 ###### See this web page in action on [Github Pages]({repo})
 
-* Go to ( {project repo} ).
-
-*  Navigate to the code button on the github website.\
-![Code button](/img/README/code.PNG)
-
-* Click on the code button to open the menu.\
-![Github Repo Example](/img/README/HTTPS.png)
-
-- Copy the HTTPS code by clicking the clipboard next to the link.
-
-- Within your Bash terminal navigate to your desired location by using cd fallowed by your desired directory.
+* Copy the following link to your clipboard: https://github.com/jonstump/api-friday-project
+* Open a Bash Terminal
+* In your terminal window, navigate to a directory that you would like to clone the repository to
+* Within your git bash terminal type in 'git clone' and then paste in the link from your clipboard by right clicking and selecting 'paste' example below:
 ```bash
- cd Desktop
-``` 
-
-- Once you have chosen your desired directory use the command.
-```bash 
-git clone {git repo}
+$ git clone https://github.com/jonstump/api-friday-project
 ```
-
-<div 
-  style="
-    background-color: #d1ecf1; 
-    color: grey; padding: 6px; 
-    font-size: 9px; 
-    border-radius: 5px; 
-    border: 1px solid #d4ecf1; 
-    margin-bottom: 12px"
-> 
-  <span 
-    style="
-      font-size: 12px; 
-      font-weight: 600; 
-      color: #0c5460;"
-  >
-    ⓘ
-  </span>
-  <span 
-    style="
-      font-size: 12px; 
-      font-weight: 900; 
-      color: #0c5460;
-      margin-bottom: 24px"
-  >
-    Note : 
-  </span> 
-  If you have any problems make sure your HTTPS code is correct! The example above might not be the most recent HTTPS code!
-</div>
+* Once the project is cloned navigate to the cloned directory and run ```npm install``` to install all relevant modules.
+* After running ```npm install``` you will want to run ```npm run build``` to build the project.
+* Once the project has been built you can run tests against it with ```npm test```
+* Now you should be able to open the project in your text editor and look at its functionality.
 
 
-* Then after the process is completed use the command.
+## Bugs
+* 
 
-``` bash
-code .
-```
+* * *
 
+## Further Exploration 
+* 
 
-## Addition comments:
-* Created on x/xx/21
+* * *
 
+## Sources
 
 * * *
 
 ## License:
-> *&copy; David Couch, 2021*
 
-Licensed under [MIT license](https://mit-license.org/)
+[GPLv3](https://choosealicense.com/licenses/gpl-3.0/)\
+Jon Stump &copy; 2021
 
 * * *
 
 ## Contact Information
-_David Couch: [Email](dcouch440@gmail.com)_
+_Jon Stump: [Email](jmstump@gmail.com)_
