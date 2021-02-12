@@ -7,25 +7,31 @@ import Currency from "../js/currency.js";
 $(document).ready(function() {
   $('#convert').click(function() {
     let amount = $('#dollarAmount').val();
-    let currency = $('#selectedCurrency').val();
-    
+    let currencyOne = $('#currencyOne').val();
+    let currencyTwo = $('#currencyTwo').val();
+    let currencyThree = $('#currencyThree').val();
+    let currencyFour = $('#currencyFour').val();
+    let currencyFive = $('#currencyFive').val();
+    console.log(currencyOne);
+    let currencies = [];
+    currencies.push(currencyOne, currencyTwo, currencyThree, currencyFour, currencyFive);
+    console.log(currencies);
+
     let promise = Currency.currencyConvert();
 
     promise.then(function(response) {
-      const body = JSON.parse(response);
-      const rate = body.conversion_rates[currency] * amount
-      console.log(rate)
-      console.log(amount * body.conversion_rates[currency])
-      if (body.result === "error") {
-        $('#error').text(`There was an error processing your request: ${body['error-type']}`);
-      } else if (isNaN(rate)) {
-        $('#conversion').text(`Sorry we can't cover a rate for ${currency}`)
-      } else {
-        $('#conversion').text(`The current rate for ${currency} is $${rate}`)
-      }
-    }, function(error) {
-      
+      for (let i = 0; i < currencies.length; i++) {
+        const body = JSON.parse(response);
+        const rate = body.conversion_rates[currencies[i]] * amount;
+        if (body.result === "error") {
+          $('#error').text(`There was an error processing your request: ${body['error-type']}`);
+        } else if (isNaN(rate)) {
+          $('#conversion').text(`Sorry we can't cover a rate for ${currencies[i]}`);
+        } else {
+          $('#conversion').text(`The current rate for ${currencies[i]} is $${rate}`);
+          $('#error').text("");
+        }
+      } 
     });
-
   });
 });
