@@ -6,22 +6,25 @@ import Currency from "../js/currency.js";
 
 
 
-
-function getElements(response) {
-  if (response && response.result!="error") {
-    console.log(response);
-  } else {
-    $('#error').text('there was an error');
-  }
-}
-
 $(document).ready(function() {
-  $('form').submit(function() {
-    // let selectedCurrency = $('#selectedCurrency').val();
+  $('#convert').click(function() {
+    let currency = $('#selectedCurrency').val();
     
+    let promise = Currency.currencyConvert(currency);
+    console.log(promise);
+
+    promise.then(function(response) {
+      const body = JSON.parse(response);
+      console.log(body)
+      console.log(body.result)
+      if (body.result === "error") {
+        $('#error').text(`There was an error processing your request: ${body['error-type']}`);
+      } else {
+        $('#conversion').text(`The current rate for ${currency} is ${body.conversion_rate}%`)
+      }
+    }, function(error) {
+      
+    });
+
   });
-  Currency.currencyConvert()
-      .then(function(response) {
-        getElements(response);
-      });
 });
