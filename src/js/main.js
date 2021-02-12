@@ -17,10 +17,12 @@ $(document).ready(function() {
       const body = JSON.parse(response);
       console.log(body)
       console.log(body.result)
+      console.log(body.conversion_rates)
+      console.log(body.conversion_rates['AED'])
       if (body.result === "error") {
         $('#error').text(`There was an error processing your request: ${body['error-type']}`);
       } else {
-        $('#conversion').text(`The current rate for ${currency} is ${body.conversion_rate}%`)
+        $('#conversion').text(`The current rate for ${currency} is ${body}%`)
       }
     }, function(error) {
       
