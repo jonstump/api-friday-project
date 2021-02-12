@@ -20,8 +20,10 @@ $(document).ready(function() {
     let promise = Currency.currencyConvert();
 
     promise.then(function(response) {
+      const body = JSON.parse(response);
+      let outputArray = [];
+      console.log(body);
       for (let i = 0; i < currencies.length; i++) {
-        const body = JSON.parse(response);
         const rate = body.conversion_rates[currencies[i]] * amount;
         if (body.result === "error") {
           $('#error').text(`There was an error processing your request: ${body['error-type']}`);
