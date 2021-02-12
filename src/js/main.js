@@ -5,28 +5,11 @@ import '../css/styles.css';
 import Currency from "../js/currency.js";
 
 
-// async function currencyLookUp(selectedCurrency) {
-//   const response = function getElements(response) {
-//       if (response && response!="Error") {
-//         console.log(response);
-//         let rates = response.conversion_rates;
-//         return rates;
-//       } else {
-//         $('#error').text('there was an error');
-//       }
-//     }
-//   let userCurrency = selectedCurrency
-//   console.log(response);
-//   if (userCurrency != "GPB") {
-//     $('#conversion').text("Currency unavailable for conversion");
-//   } $('conversion').text(`The rate for ${selectedCurrency} is ${response.conversion_rates[0]}`);
-// }
+
 
 function getElements(response) {
-  if (response && response!="Error") {
+  if (response && response.result!="error") {
     console.log(response);
-    let rates = response.conversion_rates;
-    return rates;
   } else {
     $('#error').text('there was an error');
   }
@@ -34,13 +17,11 @@ function getElements(response) {
 
 $(document).ready(function() {
   $('form').submit(function() {
-    let selectedCurrency = $('#selectedCurrency').val();
-    currencyLookUp(selectedCurrency);
+    // let selectedCurrency = $('#selectedCurrency').val();
+    
   });
-
   Currency.currencyConvert()
-    .then(function(response) {
-      getElements(response);
-    });
-
+      .then(function(response) {
+        getElements(response);
+      });
 });
