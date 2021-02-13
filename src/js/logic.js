@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 export default class Logic {
-  checker(promise, currencies, amount) {
+  static checker(promise, currencies, amount) {
     promise.then(function(response) {
       const body = JSON.parse(response);
       // let outputArray = [];
