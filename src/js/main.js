@@ -20,6 +20,6 @@ $(document).ready(function() {
 
     let promise = Currency.currencyConvert();
 
-    Logic.checker(promise.then());
+    Logic.checker(promise, currencies, amount);
   });
 });
