@@ -3,7 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/styles.css';
 import Currency from "../js/currency.js";
-import Logic from "../js/logic.js"
+import Logic from "../js/logic.js";
 
 $(document).ready(function() {
   $('#convert').click(function() {
@@ -18,8 +18,12 @@ $(document).ready(function() {
     currencies.push(currencyOne, currencyTwo, currencyThree, currencyFour, currencyFive);
     console.log(currencies);
 
-    let promise = Currency.currencyConvert();
-
-    Logic.checker(promise, currencies, amount);
+    if (amount && currencyOne) {
+      currencies.push(currencyOne, currencyTwo, currencyThree, currencyFour, currencyFive);
+      let promise = Currency.currencyConvert();
+      Logic.checker(promise, currencies, amount);
+    } else {
+      alert('Please enter an amount and one Currency');
+    }
   });
 });

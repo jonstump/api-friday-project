@@ -4,7 +4,6 @@ export default class Logic {
   static checker(promise, currencies, amount) {
     promise.then(function(response) {
       const body = JSON.parse(response);
-      // let outputArray = [];
       console.log(body);
       for (let i = 0; i < currencies.length; i++) {
         const rate = body.conversion_rates[currencies[i]] * amount;
