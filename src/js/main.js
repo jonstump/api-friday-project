@@ -3,6 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/styles.css';
 import Currency from "../js/currency.js";
+import Logic from "../js/logic.js";
 
 $(document).ready(function() {
   $('#convert').click(function() {
@@ -17,21 +18,12 @@ $(document).ready(function() {
     currencies.push(currencyOne, currencyTwo, currencyThree, currencyFour, currencyFive);
     console.log(currencies);
 
-    let promise = Currency.currencyConvert();
-
-    promise.then(function(response) {
-      const body = JSON.parse(response);
-      if (body.result === "error") {
-        $('#error').text(`There was an error processing your request: ${body['error-type']}`);
-      }
-      for (let i = 0; i < currencies.length; i++) {
-        const rate = body.conversion_rates[currencies[i]] * amount;
-        if (isNaN(rate)) {
-          $('#conversion').append(`<li>Sorry we can't cover a rate for ${currencies[i]}</li>`);
-        } else {
-          $('#conversion').append(`<li>The current rate for ${currencies[i]} is $${rate}</li>`);
-        }
-      }
-    });
+    if (amount && currencyOne) {
+      currencies.push(currencyOne, currencyTwo, currencyThree, currencyFour, currencyFive);
+      let promise = Currency.currencyConvert();
+      Logic.checker(promise, currencies, amount);
+    } else {
+      alert('Please enter an amount and one Currency');
+    }
   });
 });
