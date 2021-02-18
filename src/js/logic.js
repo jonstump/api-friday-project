@@ -5,7 +5,7 @@ export default class Logic {
     promise.then(function(response) {
       const body = JSON.parse(response);
       if (body.result === "error") {
-        $('#error').text(`<li>There was an error processing your request: ${body['error-type']}</li>`);
+        $('#error').text(`There was an error processing your request: ${body['error-type']}`);
       } else {
         for (let i = 0; i < currencies.length; i++) {
           const rate = body.conversion_rates[currencies[i]] * amount;
