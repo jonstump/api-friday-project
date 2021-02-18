@@ -56,8 +56,6 @@ $ git clone https://github.com/jonstump/api-friday-project
 
 ## Bugs
 * appends list items and never clears list when convert is clicked
-* does not check if user doesn't input an amount
-* does not check if user doesn't input a currency
 
 * * *
 
@@ -74,6 +72,7 @@ $ git clone https://github.com/jonstump/api-friday-project
 * [w3schools](https://www.w3schools.com/)
 * [MDN Web Docs](https://developer.mozilla.org/en-US/)
 * [Exchange Rate API](https://www.exchangerate-api.com/docs/overview)
+* [Wikipedia Currency codes](https://en.wikipedia.org/wiki/ISO_4217)
 * * *
 
 ## License:
