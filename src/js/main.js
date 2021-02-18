@@ -15,7 +15,6 @@ $(document).ready(function() {
     let currencyFive = $('#currencyFive').val();
     console.log(currencyOne);
     let currencies = [];
-    currencies.push(currencyOne, currencyTwo, currencyThree, currencyFour, currencyFive);
     console.log(currencies);
 
     if (amount && currencyOne) {
