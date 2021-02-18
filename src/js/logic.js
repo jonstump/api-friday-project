@@ -4,7 +4,6 @@ export default class Logic {
   static checker(promise, currencies, amount) {
     promise.then(function(response) {
       const body = JSON.parse(response);
-      console.log(body);
       if (body.result === "error") {
         $('#error').text(`<li>There was an error processing your request: ${body['error-type']}</li>`);
       } else {

@@ -13,12 +13,9 @@ $(document).ready(function() {
     let currencyThree = $('#currencyThree').val();
     let currencyFour = $('#currencyFour').val();
     let currencyFive = $('#currencyFive').val();
-    console.log(currencyOne);
     let currencies = [];
-    console.log(currencies);
 
     if (amount && currencyOne) {
-      console.log(currencyTwo);
       currencies.push(currencyOne, currencyTwo, currencyThree, currencyFour, currencyFive);
       let promise = Currency.currencyConvert();
       Logic.checker(promise, currencies, amount);
