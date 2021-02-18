@@ -48,7 +48,7 @@ $ git clone https://github.com/jonstump/api-friday-project
 * Navigate to [ExchangeRate-API](https://www.exchangerate-api.com/docs/overview), sign up, and generate a key.
 * Once you have a key create a .env file in the project folder.
 * Inside the .env file add "API_KEY=" with your generated API key after the equals sign. No spaces.
-* Before running the server you will need a chrome extension to get around CORS errors. A recommended extension can be found [here](https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc/related?hl=en-US).
+* Before running the server you may need a chrome extension to get around CORS errors. A recommended extension can be found [here](https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc/related?hl=en-US).
 * After running ```npm install``` you will want to run ```npm run start``` to build and start a server for the project.
 * You should now be able to try out the currency convertor.
 * Now you should be able to open the project in your text editor and look at its functionality as well by navigating to the project folder and opening it with your text editor of choice.
