@@ -29,7 +29,11 @@ span {
 .card {
   background-color: #A53F2B;
   color: #F0FFCE;
-  }
+}
+
+.row2 {
+  padding-top: 20px;
+}
 
 .card-body{
   /* background-color: brown; */
