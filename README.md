@@ -36,8 +36,6 @@ Initial Specs:
 
 
 ## Installation : 
-### Want to see this webpage now?
-###### See this web page in action on [Github Pages]({repo})
 
 * Copy the following link to your clipboard: https://github.com/jonstump/api-friday-project
 * Open a Bash Terminal
