@@ -10,10 +10,12 @@ export default class Logic {
       } else {
         for (let i = 0; i < currencies.length; i++) {
           const rate = body.conversion_rates[currencies[i]] * amount;
-          if (isNaN(rate)) {
-            $('#conversion').append(`<li>Sorry we can't cover a rate for ${currencies[i]}</li>`);
-          } else {
-            $('#conversion').append(`<li>The current rate for ${currencies[i]} is $${rate}</li>`);
+          if (currencies[i] != "") {
+            if (isNaN(rate)) {
+              $('#conversion').append(`<li>Sorry we can't cover a rate for ${currencies[i]}</li>`);
+            } else {
+              $('#conversion').append(`<li>The current rate for ${currencies[i]} is $${rate}</li>`);
+            }
           }
         }
       }

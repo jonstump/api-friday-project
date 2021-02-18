@@ -18,6 +18,7 @@ $(document).ready(function() {
     console.log(currencies);
 
     if (amount && currencyOne) {
+      console.log(currencyTwo);
       currencies.push(currencyOne, currencyTwo, currencyThree, currencyFour, currencyFive);
       let promise = Currency.currencyConvert();
       Logic.checker(promise, currencies, amount);
